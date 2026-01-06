@@ -4,7 +4,7 @@ import { z } from "zod";
 export const analyzeCodeTool = tool({
   description: `Analyze code for bugs, performance issues, security vulnerabilities, and best practices. 
   Provides detailed feedback and optimization suggestions.`,
-  parameters: z.object({
+  inputSchema: z.object({
     code: z.string().describe("The code to analyze"),
     language: z.string().describe("Programming language of the code"),
     analysisType: z.enum([

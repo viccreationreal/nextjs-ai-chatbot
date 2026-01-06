@@ -4,7 +4,7 @@ import { z } from "zod";
 export const generateProjectTool = tool({
   description: `Generate a complete project structure with all necessary files, configurations, and documentation. 
   This tool creates production-ready project templates for various tech stacks.`,
-  parameters: z.object({
+  inputSchema: z.object({
     projectType: z.enum([
       "react-app",
       "nextjs-fullstack", 
@@ -90,6 +90,84 @@ export const generateProjectTool = tool({
           "app/core/",
           "tests/",
           "Dockerfile"
+        ]
+      },
+      "react-native-app": {
+        name: "React Native Application",
+        stack: ["React Native", "TypeScript", "Expo"],
+        files: [
+          "package.json",
+          "app.json",
+          "tsconfig.json",
+          "App.tsx",
+          "src/components/",
+          "src/screens/",
+          "src/navigation/",
+          "src/utils/"
+        ]
+      },
+      "vue-app": {
+        name: "Vue.js Application",
+        stack: ["Vue.js", "TypeScript", "Vite", "Pinia"],
+        files: [
+          "package.json",
+          "vite.config.ts",
+          "tsconfig.json",
+          "src/App.vue",
+          "src/main.ts",
+          "src/components/",
+          "src/stores/",
+          "src/views/"
+        ]
+      },
+      "angular-app": {
+        name: "Angular Application",
+        stack: ["Angular", "TypeScript", "RxJS"],
+        files: [
+          "package.json",
+          "angular.json",
+          "tsconfig.json",
+          "src/app/",
+          "src/app/components/",
+          "src/app/services/",
+          "src/app/models/"
+        ]
+      },
+      "microservice": {
+        name: "Microservice",
+        stack: ["Node.js", "TypeScript", "Docker", "Kubernetes"],
+        files: [
+          "package.json",
+          "tsconfig.json",
+          "src/app.ts",
+          "src/routes/",
+          "src/services/",
+          "Dockerfile",
+          "k8s/",
+          "tests/"
+        ]
+      },
+      "static-website": {
+        name: "Static Website",
+        stack: ["HTML", "CSS", "JavaScript"],
+        files: [
+          "index.html",
+          "css/styles.css",
+          "js/main.js",
+          "assets/",
+          "images/"
+        ]
+      },
+      "electron-app": {
+        name: "Electron Application",
+        stack: ["Electron", "TypeScript", "React"],
+        files: [
+          "package.json",
+          "tsconfig.json",
+          "src/main.ts",
+          "src/renderer/",
+          "src/preload/",
+          "build/"
         ]
       }
     };
