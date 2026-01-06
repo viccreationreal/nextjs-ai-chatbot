@@ -52,15 +52,14 @@ function PureChatHeader({
 
       <Button
         asChild
-        className="order-3 hidden bg-zinc-900 px-2 text-zinc-50 hover:bg-zinc-800 md:ml-auto md:flex md:h-fit dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+        className="order-3 hidden bg-gradient-to-r from-blue-600 to-purple-600 px-3 text-white hover:from-blue-700 hover:to-purple-700 md:ml-auto md:flex md:h-fit"
       >
         <Link
-          href={"https://vercel.com/templates/next.js/nextjs-ai-chatbot"}
+          href={"https://github.com/viccreationreal/nextjs-ai-chatbot"}
           rel="noreferrer"
-          target="_noblank"
+          target="_blank"
         >
-          <VercelIcon size={16} />
-          Deploy with Vercel
+          🤖 Vic AI
         </Link>
       </Button>
     </header>
